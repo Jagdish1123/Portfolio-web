@@ -1,0 +1,60 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+build/
+dist/
+
+# Add .dist to ignore
+.dist/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# React Native
+.expo/
+.android/
+.ios/
+
+# Coverage reports
+coverage/
+
+# Testing
+jest/
+test/
+*.test.js
+*.spec.js
+
+# Dependency directories
+jspm_packages/
+
+# Next.js
+.next/
+
+# VS Code settings
+.vscode/
+
+# MacOS
+*.swp
+
+# Git directory (important)
+.git/
+
