@@ -11,9 +11,7 @@ import {
   // html,
   // Css,
   Figma,
-  Github,
-  Linkedin,
-  Mail,
+  // Tailwind,
   Globe
 } from "lucide-react";
 
@@ -80,29 +78,7 @@ export default function About() {
               I thrive on optimizing code for efficiency and love competing in hackathons. 
               Driven by curiosity for emerging technologies, I'm committed to building impactful solutions.
             </p>
-            <div className="flex gap-4">
-              <motion.a 
-                href="https://github.com/yourusername" 
-                whileHover={{ y: -2 }}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <Github size={24} />
-              </motion.a>
-              <motion.a 
-                href="https://linkedin.com/in/yourusername" 
-                whileHover={{ y: -2 }}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <Linkedin size={24} />
-              </motion.a>
-              <motion.a 
-                href="mailto:youremail@example.com" 
-                whileHover={{ y: -2 }}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <Mail size={24} />
-              </motion.a>
-            </div>
+   
           </motion.div>
 
           {/* Tech Stack Section */}

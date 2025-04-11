@@ -1,16 +1,15 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { Download, Calendar, Bot, Github, Linkedin, Twitter, Award, Trophy, Star, School } from 'lucide-react';
+import { Download,  Github, Linkedin, Award, Trophy, Star, Mail } from 'lucide-react';
 import img from "../assets/jay.jpg";
 
 const userData = {
   name: "Jagdish Bainade",
-  currentRole: "Full Stack Developer | AI/ML Enthusiast",
+  currentRole: "Full Stack Developer ",
   contact: {
     email: "jagdishbainade01@gmail.com",
     phone: "+91 9146314919",
-    calendly: "https://calendly.com/jagdish-meeting",
-    github: "https://github.com/jagdishbainade",
+    github: "https://github.com/Jagdish1123",
     linkedin: "https://linkedin.com/in/jagdishbainade",
     twitter: "https://twitter.com/jagdishbainade"
   },
@@ -25,12 +24,12 @@ const achievementBadges = [
   { icon: <Star className="text-yellow-400 fill-yellow-400" size={20} />, label: "CodeChef 3-Star" },
   { icon: <Trophy className="text-amber-500 fill-amber-500/20" size={20} />, label: "Mastercard Hackathon" },
   { icon: <Award className="text-red-500 fill-red-500/20" size={20} />, label: "200-Day LeetCode Streak" },
-  { icon: <School className="text-purple-500 fill-purple-500/20" size={20} />, label: "PICT 9.13 CGPA" }
+  // { icon: <School className="text-purple-500 fill-purple-500/20" size={20} />, label: "PICT 9.13 CGPA" }
 ];
 
 export default function Hero() {
   return (
-<section id="hero" className="min-h-screen pt-24 relative overflow-hidden bg-transparent">      {/* Particle Background */}
+<section id="hero" className="min-h-screen pt-24 relative overflow-hidden bg-transparent">     
       <div className="absolute inset-0 z-0 overflow-hidden">
         {[...Array(30)].map((_, i) => (
           <motion.div
@@ -91,12 +90,11 @@ export default function Hero() {
             sequence={[
               userData.currentRole,
               2000,
-              'AI/ML Engineer',
+              'Python Developer',
               2000,
               'CyberSec Enthusiast',
               2000,
-              'Open Source Contributor',
-              2000
+            
             ]}
             wrapper="h2"
             speed={40}
@@ -137,7 +135,6 @@ export default function Hero() {
               </motion.div>
             ))}
           </motion.div>
-
           {/* Achievement badges */}
           <motion.div 
             className="flex flex-wrap gap-3 mb-8"
@@ -166,7 +163,7 @@ export default function Hero() {
             transition={{ delay: 0.3 }}
           >
             <motion.a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/12kbFhr6TNCBAGpgVVRgyeMWOZ3imftLk/view?usp=sharing"
               download
               className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl flex items-center gap-2 hover:shadow-lg transition-all group relative overflow-hidden"
               whileHover={{ 
@@ -182,7 +179,7 @@ export default function Hero() {
               </span>
             </motion.a>
             
-            <motion.a
+            {/* <motion.a
               href={userData.contact.calendly}
               target="_blank"
               rel="noopener"
@@ -195,7 +192,8 @@ export default function Hero() {
                 <Calendar size={20} className="group-hover:animate-pulse" />
                 <span className="font-semibold tracking-wide">Schedule Call</span>
               </span>
-            </motion.a>
+            </motion.a> */}
+
           </motion.div>
 
           {/* Social Links */}
@@ -225,16 +223,18 @@ export default function Hero() {
             >
               <Linkedin size={20} className="text-blue-400" />
             </motion.a>
+
             <motion.a
-              href={userData.contact.twitter}
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=jagdishbainade01@gmail.com"
               target="_blank"
-              rel="noopener"
-              className="p-3 bg-gray-800/50 rounded-full backdrop-blur-sm border border-gray-700 hover:bg-blue-400/20 transition-colors"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-800/50 rounded-full backdrop-blur-sm border border-gray-700 hover:bg-red-400/20 transition-colors"
               whileHover={{ y: -4, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Twitter size={20} className="text-cyan-400" />
+              <Mail size={20} className="text-red-400" />
             </motion.a>
+            
           </motion.div>
         </motion.div>
 
@@ -333,28 +333,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Floating Chat Button with pulse animation */}
-      <motion.button
-        className="fixed bottom-8 right-8 p-4 bg-gradient-to-br from-blue-600 to-blue-500 text-white rounded-full shadow-xl z-50 group"
-        initial={{ scale: 0 }}
-        animate={{ 
-          scale: 1,
-          boxShadow: "0 0 0 0 rgba(59, 130, 246, 0.7)"
-        }}
-        transition={{ delay: 1 }}
-        whileHover={{ 
-          scale: 1.1,
-          boxShadow: "0 0 0 10px rgba(59, 130, 246, 0)"
-        }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <Bot size={24} className="group-hover:animate-wiggle" />
-        <motion.span
-          className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-gray-900"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
-      </motion.button>
     </section>
   );
 }
