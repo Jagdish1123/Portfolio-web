@@ -11,49 +11,46 @@ export default function ParticleBackground() {
   return (
     <Particles
       id="tsparticles"
+      aria-hidden="true"
       init={particlesInit}
       options={{
         background: {
-          color: {
-            value: "#0f172a",
-          },
+          color: { value: "#0f172a" },
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         particles: {
-          color: {
-            value: "#ffffff",
-          },
+          color: { value: "#ffffff" },
           links: {
-            color: "#ffffff",
-            distance: 150,
+            color: "#38bdf8",
+            distance: 130,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.25,
             width: 1,
           },
           move: {
             enable: true,
-            outModes: {
-              default: "bounce",
-            },
+            outModes: { default: "bounce" },
+            speed: 0.8,
             random: false,
-            speed: 1,
             straight: false,
           },
           number: {
-            density: {
-              enable: true,
-              area: 800,
-            },
-            value: 80,
+            density: { enable: true, area: 900 },
+            value: 90,
           },
-          opacity: {
-            value: 0.3,
+          opacity: { value: 0.35 },
+          shape: { type: "circle" },
+          size: { value: { min: 1, max: 3.5 } },
+        },
+        interactivity: {
+          events: {
+            onHover: { enable: true, mode: "repulse" },
+            onClick: { enable: true, mode: "push" },
+            resize: true,
           },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            value: { min: 1, max: 3 },
+          modes: {
+            repulse: { distance: 80, duration: 0.4 },
+            push: { quantity: 4 },
           },
         },
         detectRetina: true,
