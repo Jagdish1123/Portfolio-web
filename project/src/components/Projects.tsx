@@ -4,12 +4,12 @@ import {
   ExternalLink,
   Code2,
   Cpu,
-  Terminal,
+  Flame,
   Database,
   Shield,
   FlaskConical,
   Rocket,
-  GitBranch,
+ 
   Globe
 } from "lucide-react";
 import project1 from "../assets/images/project-1.jpg";
@@ -19,7 +19,8 @@ import project4 from "../assets/images/project-4.png";
 import project6 from "../assets/images/project-6.png";
 import project7 from "../assets/images/project-7.jpg";
 import project8 from "../assets/images/project-8.png";
-
+import project9 from "../assets/images/project-9.jpeg";
+import project10 from "../assets/images/project-10.png";
 const projects = [
   {
     title: "Movie App",
@@ -44,6 +45,31 @@ const projects = [
     ],
     demo: "https://github.com/Jagdish1123/CareBase-Portal",
     github: "https://github.com/Jagdish1123/CareBase-Portal"
+  },
+    {
+    title: "AI-Based Expense Prediction System",
+    description: "Smart financial assistant with AI-powered budgeting, group tracking, and payment simulation.",
+    image: project9,
+    tech: [
+      { name: "React.js", icon: <FlaskConical className="text-blue-300" size={16} /> },
+      { name: "Node.js", icon: <Code2 className="text-yellow-400" size={16} /> },
+      { name: "MongoDB", icon: <Database className="text-green-400" size={16} /> },
+      { name: "Python", icon: <FlaskConical className="text-indigo-500" size={16} /> }
+    ],
+    demo: "https://github.com/Jagdish1123/Cummins_Hackathon25", 
+    github: "https://github.com/Jagdish1123/Cummins_Hackathon25"
+  },
+    {
+    title: "Library Management System",
+    description: "A complete solution to manage books, users, and lending operations in a library.",
+    image: project10,
+    tech: [
+      { name: "React", icon: <FlaskConical className="text-blue-300" size={16} /> },
+      { name: "MongoDB", icon: <Database className="text-green-400" size={16} /> },
+      { name: "Express.js", icon: <Code2 className="text-yellow-500" size={16} /> }
+    ],
+    demo: "https://github.com/Jagdish1123/Library-Management-System", 
+    github: "https://github.com/Jagdish1123/Library-Management-System"
   },
   {
     title: "Cybercell Website",
