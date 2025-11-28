@@ -1,45 +1,66 @@
 import { motion } from "framer-motion";
-import { 
-  Code2, 
-  Cpu, 
+
+import {
+  Code2,
   Terminal,
-  Database,
-  Shield,
-  FlaskConical,
+  Cpu,
+  Globe,
   Rocket,
+  Shield,
+  Database,
+  FlaskConical,
   GitBranch,
-  // html,
-  // Css,
   Figma,
-  // Tailwind,
-  Globe
+  ServerCog,
+  Boxes,
+  Cloud,
+  Wrench,
+  Command,
+  Laptop,
+  Bug
 } from "lucide-react";
 
 const languages = [
+  { name: "Python", icon: <Terminal className="text-yellow-400" size={20} /> },
+  { name: "JavaScript", icon: <Cpu className="text-yellow-500" size={20} /> },
   { name: "C++", icon: <Code2 className="text-blue-400" size={20} /> },
-  { name: "Python", icon: <Terminal className="text-yellow-400" size={20} /> }
+  { name: "Bash", icon: <Command className="text-green-400" size={20} /> },
 ];
 
 const frontend = [
-  // { name: "HTML", icon: <Html className="text-orange-500" size={20} /> },
-  // { name: "CSS", icon: <Css className="text-blue-500" size={20} /> },
-  { name: "JavaScript", icon: <Cpu className="text-yellow-500" size={20} /> },
-  { name: "Tailwind CSS", icon: <Rocket className="text-cyan-400" size={20} /> },
+  { name: "HTML", icon: <Globe className="text-orange-400" size={20} /> },
+  { name: "CSS", icon: <Rocket className="text-blue-400" size={20} /> },
+  { name: "JavaScript", icon: <Cpu className="text-yellow-400" size={20} /> },
   { name: "React", icon: <FlaskConical className="text-blue-300" size={20} /> },
-  { name: "Next.js", icon: <Globe className="text-white" size={20} /> }
+  { name: "Next.js", icon: <Globe className="text-white" size={20} /> },
+  { name: "Tailwind CSS", icon: <Rocket className="text-cyan-400" size={20} /> },
+  { name: "Three.js", icon: <Boxes className="text-purple-400" size={20} /> }
 ];
 
 const backend = [
+  { name: "Python", icon: <Terminal className="text-yellow-400" size={20} /> },
   { name: "Django", icon: <Shield className="text-green-500" size={20} /> },
-  { name: "Django REST", icon: <Database className="text-green-400" size={20} /> },
   { name: "Node.js", icon: <Terminal className="text-green-300" size={20} /> },
   { name: "Express", icon: <Rocket className="text-gray-300" size={20} /> },
-  { name: "MongoDB", icon: <Database className="text-emerald-500" size={20} /> }
 ];
 
+// const databases = [
+//   { name: "MySQL", icon: <Database className="text-blue-400" size={20} /> },
+//   { name: "PostgreSQL", icon: <Database className="text-sky-500" size={20} /> },
+//   { name: "MongoDB", icon: <Database className="text-emerald-500" size={20} /> },
+// ];
+
 const tools = [
+  { name: "Linux", icon: <Laptop className="text-gray-300" size={20} /> },
+  { name: "AWS", icon: <Cloud className="text-orange-400" size={20} /> },
+  { name: "Docker", icon: <ServerCog className="text-blue-400" size={20} /> },
+  { name: "Kubernetes", icon: <Boxes className="text-blue-300" size={20} /> },
+  { name: "Git", icon: <GitBranch className="text-red-400" size={20} /> },
   { name: "GitHub", icon: <GitBranch className="text-purple-400" size={20} /> },
-  { name: "Figma", icon: <Figma className="text-pink-400" size={20} /> }
+  { name: "Vercel", icon: <Globe className="text-white" size={20} /> },
+  { name: "Postman", icon: <Bug className="text-orange-500" size={20} /> },
+  { name: "Figma", icon: <Figma className="text-pink-400" size={20} /> },
+  { name: "VS Code", icon: <Wrench className="text-blue-300" size={20} /> }
 ];
 
 export default function About() {
@@ -70,14 +91,16 @@ export default function About() {
               Introduction
             </h3>
             <p className="text-gray-300 mb-6">
-              I'm a third-year Computer Science student passionate about technology, problem-solving, and innovation. 
-              My expertise spans Linux, cybersecurity, and full-stack development with hands-on experience in 
-              building scalable applications.
+              I'm a final-year Computer Science student passionate about shaping the future of technology. 
+              Skilled in Linux, cybersecurity, and full-stack development, I have hands-on experience building 
+              scalable React applications and robust Django backends.
             </p>
             <p className="text-gray-300 mb-6">
-              I thrive on optimizing code for efficiency and love competing in hackathons. 
-              Driven by curiosity for emerging technologies, I'm committed to building impactful solutions.
+              I thrive on solving complex problems, driving innovation, and delivering impactful solutions. 
+              I'm open to opportunities in software development, cybersecurity, and tech innovation. 
+              Let’s connect and collaborate to push the boundaries of technology.
             </p>
+
    
           </motion.div>
 
