@@ -2,19 +2,23 @@ import React from 'react';
 import ParticleBackground from './components/ParticleBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
+import EngineeringDepth from './components/EngineeringDepth';
+import About from './components/About';
 import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900 text-white relative">
+    <div className="min-h-screen bg-slate-950 text-white relative">
       <ParticleBackground />
       <div className="relative z-10">
         <Navbar />
         <Hero />
-        <About />
+        <Experience />
         <Projects />
+        <EngineeringDepth />
+        <About />
         <Contact />
       </div>
     </div>
