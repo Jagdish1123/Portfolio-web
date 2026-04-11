@@ -1,8 +1,9 @@
 {
   "version": 2,
-  "rootDirectory": ".",
-  "build": {
-    "command": "npm run build",
-    "outputDirectory": "dist"
-  }
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ]
 }
