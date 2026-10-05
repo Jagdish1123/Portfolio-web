@@ -8,7 +8,6 @@ const navItems = [
   { label: "Projects", icon: <Terminal size={16} />, href: "#projects" },
   { label: "Architecture", icon: <Cpu size={16} />, href: "#engineering-depth" },
   { label: "Skills", icon: <Zap size={16} />, href: "#about" },
-  { label: "Contact", icon: <Mail size={16} />, href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -114,12 +113,7 @@ export default function Navbar() {
 
           {/* Mobile Links */}
           <div className="lg:hidden flex items-center gap-4">
-             <button
-               onClick={() => scrollToSection("#contact")}
-               className="px-5 py-2 bg-blue-600 text-white text-xs font-bold rounded-full hover:bg-blue-500 transition-all active:scale-95 shadow-lg shadow-blue-600/20"
-             >
-               Hire Me
-             </button>
+             {/* Mobile menu could go here */}
           </div>
         </div>
       </div>

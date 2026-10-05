@@ -1,6 +1,7 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Code2, Activity, MedalIcon, Database, Server, Zap, ArrowRight, Download } from 'lucide-react';
-import img from "../assets/jay.jpg";
+import img from "../assets/jay_custom.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -63,6 +64,44 @@ const StatCard = ({ stat }: { stat: typeof engineeringStats[0] }) => (
   </motion.div>
 );
 
+const TITLES = [
+  "Performance",
+  "Distributed Systems",
+  "Backend",
+  "Cloud Native"
+];
+
+const TypewriterText = () => {
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentTitle = TITLES[titleIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting && text === currentTitle) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && text === "") {
+        setIsDeleting(false);
+        setTitleIndex((prev) => (prev + 1) % TITLES.length);
+      } else {
+        setText(currentTitle.substring(0, text.length + (isDeleting ? -1 : 1)));
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, titleIndex]);
+
+  return (
+    <span className="text-gradient min-w-[20px] inline-block">
+      {text}
+      <span className="animate-pulse text-blue-500">_</span>
+    </span>
+  );
+};
+
 export default function Hero() {
   return (
     <section id="hero" className="min-h-screen flex items-center pt-32 pb-20 relative overflow-hidden">
@@ -87,24 +126,24 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            Turning Complex Systems into Scalable Solutions
+            Building Scalable Backend Systems
           </motion.div>
 
           <motion.h1 
             variants={itemVariants}
-            className="text-6xl md:text-[5.5rem] font-bold tracking-tight mb-6 text-white leading-[1] font-outfit"
+            className="text-6xl md:text-[5.5rem] font-bold tracking-tight mb-6 text-white leading-[1] font-outfit min-h-[220px] md:min-h-[280px]"
           >
-            Architecting <br />
-            <span className="text-gradient">Distributed</span> <br />
-            Systems
+            Software & <br />
+            <TypewriterText /> <br />
+            Engineer
           </motion.h1>
           
           <motion.p 
             variants={itemVariants}
             className="text-lg md:text-xl text-slate-400 mb-10 max-w-xl leading-relaxed font-inter"
           >
-            Senior Software Explorer specializing in high-availability backend architectures. 
-            Designing production-grade systems with <span className="text-white font-medium underline decoration-blue-500/30 underline-offset-4">Spring Boot</span>, <span className="text-white font-medium underline decoration-purple-500/30 underline-offset-4">FastAPI</span>, and cloud-native frameworks.
+            Specializing in building robust backend architectures and optimizing system performance. 
+            Experienced with <span className="text-white font-medium underline decoration-blue-500/30 underline-offset-4">Spring Boot</span>, <span className="text-white font-medium underline decoration-purple-500/30 underline-offset-4">FastAPI</span>, and distributed microservices.
           </motion.p>
 
           {/* Optimized Metrics Grid */}
@@ -120,7 +159,7 @@ export default function Hero() {
               href="#projects"
               className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl flex items-center gap-2 shadow-xl shadow-blue-900/40 transition-all active:scale-95 group"
             >
-              Verify Proof of Work
+              View Projects
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
@@ -136,51 +175,33 @@ export default function Hero() {
 
         {/* Visual Identity Section */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, rotate: -2 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
           className="relative hidden lg:block"
         >
-          <div className="relative w-full aspect-square max-w-lg mx-auto group">
+          <div className="relative w-full aspect-square max-w-md mx-auto group">
             {/* Ambient Background Glow */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-[2.5rem] blur-2xl group-hover:opacity-100 transition-opacity duration-1000 opacity-50" />
+            <div 
+              className="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 via-transparent to-purple-500/20 rounded-full blur-2xl group-hover:opacity-100 transition-opacity duration-1000 opacity-50" 
+            />
             
-            {/* Primary Frame */}
-            <div className="relative h-full w-full rounded-[2.5rem] border border-white/10 bg-slate-900 overflow-hidden shadow-[0_0_50px_-12px_rgba(30,41,59,0.5)]">
+            {/* Circular Profile Frame */}
+            <div 
+              className="relative h-full w-full rounded-full border border-slate-700 bg-slate-900 overflow-hidden shadow-[0_0_50px_-12px_rgba(30,41,59,0.5)] transition-shadow duration-300 group-hover:shadow-[0_0_80px_-15px_rgba(56,189,248,0.3)] flex items-center justify-center"
+            >
               <img
                 src={img}
                 alt="Jagdish Bainade"
-                className="w-full h-full object-cover filter contrast-[1.1] grayscale hover:grayscale-0 transition-all duration-700 opacity-90 group-hover:scale-105"
+                className="w-full h-full object-cover filter contrast-[1.05] grayscale hover:grayscale-0 transition-all duration-700 opacity-90 group-hover:opacity-100 group-hover:scale-105"
               />
-              
-              {/* Premium Code Indicator Overlay */}
-              <div className="absolute top-6 right-6">
-                <div className="glass-card px-3 py-1.5 rounded-full flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-[10px] font-bold tracking-widest text-white uppercase">Backend Architect</span>
-                </div>
-              </div>
-
-              {/* Dynamic Coding Micro-Terminal */}
-              <div className="absolute bottom-8 left-8 right-8 p-6 rounded-3xl bg-slate-950/60 backdrop-blur-xl border border-white/10 shadow-3xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700">
-                <div className="flex gap-2 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500/40 ring-1 ring-red-500/20" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/40 ring-1 ring-yellow-500/20" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/40 ring-1 ring-green-500/20" />
-                </div>
-                <div className="space-y-1 font-mono text-xs leading-relaxed">
-                  <p><span className="text-blue-400">const</span> <span className="text-purple-400">engineer</span> = &#123;</p>
-                  <p className="pl-4">core: <span className="text-yellow-200">"Architecture"</span>,</p>
-                  <p className="pl-4">patterns: [<span className="text-green-300">"CQRS"</span>, <span className="text-green-300">"EDA"</span>],</p>
-                  <p className="pl-4">goal: <span className="text-green-300">"Sub-200ms Latency"</span></p>
-                  <p>&#125;;</p>
-                </div>
-              </div>
             </div>
             
             {/* Floating Achievement Badge */}
-            <div className="absolute -right-4 top-1/3 p-4 rounded-2xl bg-slate-900 border border-white/10 shadow-2xl transform rotate-12 group-hover:rotate-0 transition-transform duration-500">
-              <MedalIcon size={24} className="text-yellow-400" />
+            <div 
+              className="absolute -right-2 top-1/4 p-4 rounded-full bg-slate-900 border border-white/10 shadow-2xl transform rotate-12 group-hover:rotate-0 transition-all duration-500"
+            >
+              <MedalIcon size={24} className="text-yellow-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]" />
             </div>
           </div>
         </motion.div>

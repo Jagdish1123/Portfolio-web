@@ -3,16 +3,30 @@ import { Briefcase, Calendar, MapPin, CheckCircle2, ChevronRight } from 'lucide-
 
 const experiences = [
   {
-    company: "Rahi Platform Technologies",
-    role: "Software Engineer Intern",
-    period: "Jan 2026 – Present",
+    company: "Netcracker Technology",
+    role: "Junior Performance Engineer Intern",
+    period: "Jun 2026 – Present",
     location: "Pune, India",
     impact: [
-      "Architecting enterprise-grade backend services using Spring Boot and PostgreSQL, focusing on system modularity and high throughput.",
-      "Optimizing database query performance and implementing caching strategies to reduce application latency by 20%.",
-      "Collaborating on system design patterns to ensure scalability for 10k+ concurrent users."
+      "Analyzed application performance using Grafana, Prometheus, JVM profiling, and centralized logs to identify CPU, memory, thread, and response-time bottlenecks.",
+      "Performed RCA for latency and system degradation using thread/heap dumps and GC logs.",
+      "Optimized database performance using SQL profiling and Oracle AWR/ASH to identify expensive queries.",
+      "Tested and monitored distributed microservices using Apache JMeter for scalability and availability."
     ],
-    tech: ["Spring Boot", "PostgreSQL", "Redis", "Kafka"]
+    tech: ["Grafana", "Prometheus", "JVM Profiling", "JMeter", "Oracle"]
+  },
+  {
+    company: "Rahi Platform Technologies",
+    role: "Software Engineer Intern",
+    period: "Jan 2026 – Jun 2026",
+    location: "Pune, India",
+    impact: [
+      "Developed and maintained RESTful APIs for a multi-tenant SaaS Loan Origination System using Spring Boot, Hibernate, and PostgreSQL, supporting flexible client-specific workflows.",
+      "Built an AI-powered OCR pipeline for KYC processing using Tesseract and AWS Bedrock, enabling automated structured data extraction and document validation with optimized image preprocessing.",
+      "Improved unit and integration test coverage from 75% to 90% using TestNG and Mockito.",
+      "Followed CI/CD practices using Jenkins and SonarQube to enforce code quality standards."
+    ],
+    tech: ["Spring Boot", "PostgreSQL", "AWS Bedrock", "Jenkins"]
   },
   {
     company: "Astraeus Next Gen Pvt. Ltd.",
@@ -93,7 +107,7 @@ const ExperienceCard = ({ exp, index }: { exp: typeof experiences[0], index: num
 
       <div className="space-y-4">
         <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
-          Key Impact <span className="h-px flex-1 bg-slate-800/50" />
+          Responsibilities <span className="h-px flex-1 bg-slate-800/50" />
         </p>
         <ul className="space-y-4">
           {exp.impact.map((bullet, i) => (
@@ -127,10 +141,10 @@ export default function Experience() {
             Professional Journey
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 font-outfit">
-            Proven <span className="text-gradient">Experience</span>
+            Professional <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed font-inter">
-            Building scalable digital products and leading engineering initiatives across diverse industries.
+            My work history and professional roles.
           </p>
         </motion.div>
 
